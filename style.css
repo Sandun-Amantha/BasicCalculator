@@ -1,83 +1,119 @@
-body{
+body {
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color:sl(0,0%,95%) ;
+    background-color: hsl(0, 0%, 95%);
 }
 
-#calculator{
+#calculator {
     font-family: Arial, sans-serif;
-    background-color:hsl(0,0%,15%);
-    border-radius:15px;
+    background-color: hsl(0, 0%, 15%);
+    border-radius: 15px;
+    height: 90vh;
+    width: 60vh;
     max-width: 80vh;
     max-height: 100vh;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-#display{
+#display {
     width: 100%;
     padding: 20px;
     font-size: 3rem;
     text-align: left;
-    border:none;
-    background-color:hsl(0,0%,20%);
-    color:white;
-}
-
-#keys{
-   display: grid;
-   grid-template-columns: repeat(4,1fr);
-   gap: 3%;
-   padding:8%;
-   padding-bottom: 50px;
-   
-   
-}
-
-button{
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
     border: none;
-    background-color: hsl(0,0%,30%);
+    background-color: hsl(0, 0%, 20%);
+    color: white;
+    box-sizing: border-box;
+}
+
+#keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3%;
+    padding: 8%;
+    padding-bottom: 50px;
+    flex-grow: 1;
+}
+
+button {
+    width: 100%;
+    aspect-ratio: 1; 
+    border-radius: 15px;
+    border: none;
+    background-color: hsl(0, 0%, 30%);
     color: white;
     font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
 }
 
-button:hover{
+button:hover {
     background-color: hsl(0, 0%, 45%);
 }
 
-button:active{
+button:active {
     background-color: hsl(0, 0%, 60%);
 }
 
-.operator-btn{
+.operator-btn {
     background-color: hsl(35, 100%, 45%);
 }
 
-.operator-btn:hover{
+.operator-btn:hover {
     background-color: hsl(35, 100%, 55%);
 }
 
-.operator-btn:active{
+.operator-btn:active {
     background-color: hsl(35, 100%, 75%);
 }
 
-.clear-btn{
+.clear-btn {
     background-color: hsl(0, 100%, 35%);
-    border-radius: 020%;
-    height: 45px;
+    grid-column: span 2; 
+    height:8vh;
 }
 
-.clear-btn:hover{
+.clear-btn:hover {
     background-color: hsl(0, 100%, 45%);
 }
 
-.clear-btn:active{
+.clear-btn:active {
     background-color: hsl(0, 100%, 75%);
+}
+
+
+@media (max-width: 768px) {
+    #calculator {
+        height: 85vh;
+        width: 65vh;
+    }
+
+    #display {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #calculator {
+        height: 90vh;
+        width: 70vh;
+    }
+
+    #display {
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+
+    button {
+        font-size: 1rem;
+    }
 }
